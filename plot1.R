@@ -1,0 +1,6 @@
+data = read.csv(pipe('grep -E "(^1/2/2007)|(^2/2/2007)" household_power_consumption.txt'), sep = ";", na.strings = c("?"))
+header = read.csv(pipe('head -n 1 household_power_consumption.txt'), sep = ";")
+colnames(data) = colnames(header)
+png("plot1.png",width=480,height=480,units="px")
+hist(data$Global_active_power, col = "red", xlab = "Global Active Power (kilowatts)", main = "Global Active Power")
+dev.off()
