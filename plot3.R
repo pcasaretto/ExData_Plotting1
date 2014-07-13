@@ -1,0 +1,7 @@
+source("data_load.R")
+png("plot3.png",width=480,height=480,units="px")
+plot(data$Date_and_Time, data$Sub_metering_1, col = "black", type = "l", xlab="", ylab="Energy sub metering")
+lines(data$Date_and_Time, data$Sub_metering_2, col = "red", type = "l", xlab="", ylab="Energy sub metering")
+lines(data$Date_and_Time, data$Sub_metering_3, col = "blue", type = "l", xlab="", ylab="Energy sub metering")
+legend("topright", lty=1, col = c("black","red","blue"), legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+dev.off()
